@@ -1,6 +1,6 @@
 package es.laguna.teams.Repositories;
 
-import es.lagunaga.com.Models.Team;
+import es.laguna.teams.Models.Team;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

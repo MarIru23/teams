@@ -1,8 +1,8 @@
 package es.laguna.teams.Mappers;
 
-import es.lagunaga.com.Models.Player;
-import es.lagunaga.com.dtos.PlayerRequestDto;
-import es.lagunaga.com.dtos.PlayerResponseDto;
+import es.laguna.teams.Models.Player;
+import es.laguna.teams.dtos.PlayerRequestDto;
+import es.laguna.teams.dtos.PlayerResponseDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

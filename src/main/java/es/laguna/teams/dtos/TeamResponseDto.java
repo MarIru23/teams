@@ -1,6 +1,6 @@
 package es.laguna.teams.dtos;
 
-import es.lagunaga.com.Models.Player;
+import es.laguna.teams.Models.Player;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 

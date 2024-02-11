@@ -1,11 +1,11 @@
 package es.laguna.teams.controllers;
 
 
-import es.lagunaga.com.Mappers.PlayerMapper;
-import es.lagunaga.com.Models.Player;
-import es.lagunaga.com.dtos.PlayerRequestDto;
-import es.lagunaga.com.dtos.PlayerResponseDto;
-import es.lagunaga.com.services.PlayerService;
+import es.laguna.teams.Mappers.PlayerMapper;
+import es.laguna.teams.Models.Player;
+import es.laguna.teams.dtos.PlayerRequestDto;
+import es.laguna.teams.dtos.PlayerResponseDto;
+import es.laguna.teams.services.PlayerService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

@@ -1,6 +1,6 @@
 package es.laguna.teams.services;
 
-import es.lagunaga.com.Models.Player;
+import es.laguna.teams.Models.Player;
 
 import java.util.List;
 

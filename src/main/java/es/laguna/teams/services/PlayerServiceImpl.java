@@ -1,8 +1,8 @@
 package es.laguna.teams.services;
 
-import es.lagunaga.com.Models.Player;
-import es.lagunaga.com.Repositories.PlayerRepository;
-import es.lagunaga.com.Repositories.TeamRepository;
+import es.laguna.teams.Models.Player;
+import es.laguna.teams.Repositories.PlayerRepository;
+import es.laguna.teams.Repositories.TeamRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

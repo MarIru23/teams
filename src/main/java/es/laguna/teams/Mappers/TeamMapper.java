@@ -1,8 +1,8 @@
 package es.laguna.teams.Mappers;
 
-import es.lagunaga.com.Models.Team;
-import es.lagunaga.com.dtos.TeamRequestDto;
-import es.lagunaga.com.dtos.TeamResponseDto;
+import es.laguna.teams.Models.Team;
+import es.laguna.teams.dtos.TeamRequestDto;
+import es.laguna.teams.dtos.TeamResponseDto;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
