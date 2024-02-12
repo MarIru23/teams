@@ -22,7 +22,7 @@ public class JWTService {
         try {
             Algorithm algorithm = Algorithm.HMAC256(jwtSecretKey);
             token = JWT.create()
-                    .withIssuer("erosketa")
+                    .withIssuer("teams")
                     .withSubject(username)
                     .withExpiresAt(new Date(System.currentTimeMillis() + jwtExpiration))
                     .sign(algorithm);
