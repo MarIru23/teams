@@ -2,10 +2,12 @@ package es.laguna.teams.Services;
 
 import es.laguna.teams.Models.user.User;
 import es.laguna.teams.Repositories.UserDetailsRepository;
+import es.laguna.teams.auth.SignupRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,7 +18,7 @@ import java.util.List;
 public class UserDetailsServiceImpl implements UserDetailsService {
 
     private final UserDetailsRepository userDetailsRepository;
-    //private final PasswordEncoder passwordEncoder;
+    private final PasswordEncoder passwordEncoder;
 
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
@@ -27,7 +29,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         return userDetailsRepository.findAll();
     }
 
-    /*public UserDetails create(SignupRequest signupRequest){
+    public UserDetails create(SignupRequest signupRequest){
         return userDetailsRepository.save(
                 new User(
                         signupRequest.getEmail(),
@@ -36,6 +38,6 @@ public class UserDetailsServiceImpl implements UserDetailsService {
                 )
         );
     }
-*/
+
 
 }
