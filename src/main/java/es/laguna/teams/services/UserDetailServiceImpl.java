@@ -14,9 +14,9 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-public class UserDetailService  implements UserDetailsService {
+public class UserDetailServiceImpl implements UserDetailsService {
     private final UserDetailsRepository userDetailsRepository;
-    //private final PasswordEncoder passwordEncoder;
+    private final PasswordEncoder passwordEncoder;
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
         return userDetailsRepository.findByEmail(email);
@@ -24,7 +24,7 @@ public class UserDetailService  implements UserDetailsService {
     public List<User> getAll(){
         return userDetailsRepository.findAll();
     }
-   /* public UserDetails create(SignUpRequest signupRequest){
+    public UserDetails create(SignUpRequest signupRequest){
         return userDetailsRepository.save(
                 new User(
                         signupRequest.getEmail(),
@@ -33,6 +33,6 @@ public class UserDetailService  implements UserDetailsService {
                 )
         );
     }
-    */
+
 
 }
