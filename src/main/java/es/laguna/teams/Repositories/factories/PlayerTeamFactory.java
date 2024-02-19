@@ -53,8 +53,8 @@ public class PlayerTeamFactory {
                 teamRepository.save(team);
             }
         } catch (Exception e){
-            log.info(e.getMessage());
+
         }
     }
 }
-}
+
