@@ -8,11 +8,17 @@ import lombok.extern.slf4j.Slf4j;
 import net.datafaker.Faker;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Locale;
 
 @Component
 @Slf4j
+@RestController
+@RequestMapping("/api/user")
 public class UserFactory {
 
     private final UserDetailsRepository userDetailsRepository;
@@ -22,7 +28,7 @@ public class UserFactory {
         this.userDetailsRepository = userDetailsRepository;
     }
 
-    @PostConstruct
+    @PostMapping ("/user")
     public void init(){
         try {
             Faker faker = new Faker(new Locale("es"));

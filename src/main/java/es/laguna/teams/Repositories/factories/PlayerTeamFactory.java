@@ -7,12 +7,17 @@ import es.laguna.teams.Repositories.TeamRepository;
 import jakarta.annotation.PostConstruct;
 import net.datafaker.Faker;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 import java.util.UUID;
-
+@RestController
+@RequestMapping("/api/factory")
 public class PlayerTeamFactory {
     private final PlayerRepository playerRepository;
     private final TeamRepository teamRepository;
@@ -23,7 +28,7 @@ public class PlayerTeamFactory {
         this.teamRepository = teamRepository;
     }
 
-    @PostConstruct
+    @PostMapping("/people")
     public void init(){
         try {
             Faker faker = new Faker(new Locale("es"));
