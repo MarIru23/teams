@@ -34,7 +34,7 @@ public class TeamMapper {
                 UUID.randomUUID(),
                 teamRequestDto.getName(),
                 teamRequestDto.getCountry(),
-                teamRequestDto.getColor(),
+                teamRequestDto.getStadium(),
                 null
         );
     }
