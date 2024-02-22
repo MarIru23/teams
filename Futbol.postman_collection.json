@@ -25,6 +25,16 @@
 						}
 					],
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ0ZWFtcyIsInN1YiI6InVzZXIiLCJleHAiOjE3MDg3MDczNjZ9.BtNZ7vZ8oSIKhwx2FS_UKqyQYnLq_FHQ7H16KeT5QKU",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -58,6 +68,16 @@
 						}
 					],
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ0ZWFtcyIsInN1YiI6InVzZXIiLCJleHAiOjE3MDg3MTYwMDd9.1EVtSHQng4vZd609fzCb7qNbiz4UNZdoU9YHYj5wD2c",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -92,10 +112,20 @@
 						}
 					],
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ0ZWFtcyIsInN1YiI6InVzZXIiLCJleHAiOjE3MDg3MTYwMDd9.1EVtSHQng4vZd609fzCb7qNbiz4UNZdoU9YHYj5wD2c",
+									"type": "string"
+								}
+							]
+						},
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/api/teams/3",
+							"raw": "http://localhost:8080/api/teams/8",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -104,7 +134,7 @@
 							"path": [
 								"api",
 								"teams",
-								"3"
+								"8"
 							]
 						}
 					},
@@ -126,11 +156,21 @@
 						}
 					],
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ0ZWFtcyIsInN1YiI6InVzZXIiLCJleHAiOjE3MDg3MTYwMDd9.1EVtSHQng4vZd609fzCb7qNbiz4UNZdoU9YHYj5wD2c",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n\t\"name\": \"Barca FC\",\r\n    \"country\": \"España\",\r\n    \"color\" : \"#ds25dw\"\r\n}",
+							"raw": "{\r\n\t\"name\": \"Barca FC\",\r\n    \"country\": \"España\",\r\n    \"stadium\" : \"Camp nou\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -147,6 +187,119 @@
 							"path": [
 								"api",
 								"teams"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT TEAM",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ0ZWFtcyIsInN1YiI6InVzZXIiLCJleHAiOjE3MDg3MTYwMDd9.1EVtSHQng4vZd609fzCb7qNbiz4UNZdoU9YHYj5wD2c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"name\": \"Barca FC\",\r\n    \"country\": \"España\",\r\n    \"stadium\" : \"Camp nou\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/teams/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"teams",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Patch TEAM",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ0ZWFtcyIsInN1YiI6InVzZXIiLCJleHAiOjE3MDg3MTYwMDd9.1EVtSHQng4vZd609fzCb7qNbiz4UNZdoU9YHYj5wD2c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"FCBarcelona\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/teams/patch/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"teams",
+								"patch",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find BYNAME",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ0ZWFtcyIsInN1YiI6InVzZXIiLCJleHAiOjE3MDg3MTYwMDd9.1EVtSHQng4vZd609fzCb7qNbiz4UNZdoU9YHYj5wD2c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/teams/name/Indiana oracles",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"teams",
+								"name",
+								"Indiana oracles"
 							]
 						}
 					},
@@ -178,7 +331,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ0ZWFtcyIsInN1YiI6InVzZXIiLCJleHAiOjE3MDc4MjcyMjN9.KN7Q4vDbvAYzlb7gfEAj2Ft-gGF94uhv8-Y1IVZuA3w",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ0ZWFtcyIsInN1YiI6InVzZXIiLCJleHAiOjE3MDg3MDczNjZ9.BtNZ7vZ8oSIKhwx2FS_UKqyQYnLq_FHQ7H16KeT5QKU",
 									"type": "string"
 								}
 							]
@@ -221,7 +374,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ0ZWFtcyIsInN1YiI6InVzZXIiLCJleHAiOjE3MDc4MjcwMDZ9.XTrO9-An7ODO1V0ra_nC2XIlZGq25anyp2bw5DXyma8",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ0ZWFtcyIsInN1YiI6InVzZXIiLCJleHAiOjE3MDg3MTYwMDd9.1EVtSHQng4vZd609fzCb7qNbiz4UNZdoU9YHYj5wD2c",
 									"type": "string"
 								}
 							]
@@ -229,7 +382,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/api/players/2",
+							"raw": "http://localhost:8080/api/players/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -238,7 +391,7 @@
 							"path": [
 								"api",
 								"players",
-								"2"
+								"1"
 							]
 						}
 					},
@@ -260,10 +413,20 @@
 						}
 					],
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ0ZWFtcyIsInN1YiI6InVzZXIiLCJleHAiOjE3MDg3MTYwMDd9.1EVtSHQng4vZd609fzCb7qNbiz4UNZdoU9YHYj5wD2c",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/api/players/name/Greenwood",
+							"raw": "http://localhost:8080/api/players/name/Willian",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -273,7 +436,7 @@
 								"api",
 								"players",
 								"name",
-								"Greenwood"
+								"Willian"
 							]
 						}
 					},
@@ -295,6 +458,16 @@
 						}
 					],
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ0ZWFtcyIsInN1YiI6InVzZXIiLCJleHAiOjE3MDg3MTYwMDd9.1EVtSHQng4vZd609fzCb7qNbiz4UNZdoU9YHYj5wD2c",
+									"type": "string"
+								}
+							]
+						},
 						"method": "DELETE",
 						"header": [],
 						"url": {
@@ -329,6 +502,16 @@
 						}
 					],
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ0ZWFtcyIsInN1YiI6InVzZXIiLCJleHAiOjE3MDg3MTYwMDd9.1EVtSHQng4vZd609fzCb7qNbiz4UNZdoU9YHYj5wD2c",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
@@ -371,6 +554,16 @@
 						}
 					],
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ0ZWFtcyIsInN1YiI6InVzZXIiLCJleHAiOjE3MDg3MTYwMDd9.1EVtSHQng4vZd609fzCb7qNbiz4UNZdoU9YHYj5wD2c",
+									"type": "string"
+								}
+							]
+						},
 						"method": "PUT",
 						"header": [],
 						"body": {
@@ -414,6 +607,16 @@
 						}
 					],
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ0ZWFtcyIsInN1YiI6InVzZXIiLCJleHAiOjE3MDg3MTYwMDd9.1EVtSHQng4vZd609fzCb7qNbiz4UNZdoU9YHYj5wD2c",
+									"type": "string"
+								}
+							]
+						},
 						"method": "PATCH",
 						"header": [],
 						"body": {
@@ -426,7 +629,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/products/patch/1",
+							"raw": "http://localhost:8080/api/players/patch/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -434,9 +637,54 @@
 							"port": "8080",
 							"path": [
 								"api",
-								"products",
+								"players",
 								"patch",
 								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find BYNUMBER",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ0ZWFtcyIsInN1YiI6InVzZXIiLCJleHAiOjE3MDg3MTYwMDd9.1EVtSHQng4vZd609fzCb7qNbiz4UNZdoU9YHYj5wD2c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/players/number/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"players",
+								"number",
+								"2"
 							]
 						}
 					},
