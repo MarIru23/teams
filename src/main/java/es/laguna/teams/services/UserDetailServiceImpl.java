@@ -21,9 +21,11 @@ public class UserDetailServiceImpl implements UserDetailsService {
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
         return userDetailsRepository.findByEmail(email);
     }
+
     public List<User> getAll(){
         return userDetailsRepository.findAll();
     }
+
     public UserDetails create(SignUpRequest signupRequest){
         return userDetailsRepository.save(
                 new User(

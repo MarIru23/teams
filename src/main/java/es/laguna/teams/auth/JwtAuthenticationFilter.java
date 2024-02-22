@@ -20,14 +20,16 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 @NoArgsConstructor
-public class JwtAuthenticationFilter extends OncePerRequestFilter{
+public class JwtAuthenticationFilter extends OncePerRequestFilter {
+
+
     @Value("${jwt.secret-key}")
     private String jwtSecretKey;
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
         String authorizationHeader = request.getHeader("Authorization");
-        if (authorizationHeader != null && authorizationHeader.contains("Bearer ")) {
+        if(authorizationHeader != null && authorizationHeader.contains("Bearer ")){
             String token = authorizationHeader.replaceAll("Bearer ", "");
 
             DecodedJWT decodedJWT;
@@ -44,10 +46,11 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter{
                         new ArrayList<>()
                 );
                 SecurityContextHolder.getContext().setAuthentication(authentication);
-            } catch (JWTVerificationException exception) {
+            } catch (JWTVerificationException exception){
                 exception.printStackTrace();
             }
         }
         doFilter(request, response, filterChain);
     }
+
 }
