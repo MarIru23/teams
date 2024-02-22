@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.UUID;
 
 @Component
@@ -23,18 +24,23 @@ public class PlayerMapper {
 
     //Esto es para un put es decir update
     public PlayerResponseDto toResponse(Player player) {
-        return new PlayerResponseDto(
-                player.getId(),
-                player.getUuid(),
-                player.getName(),
-                player.getNumber(),
-                player.getTeam()
-        );
+        if (player != null) {
+            return new PlayerResponseDto(
+                    player.getId(),
+                    player.getUuid(),
+                    player.getName(),
+                    player.getNumber(),
+                    player.getTeam()
+            );
+        } else {
+            return null;
+        }
     }
     //Se pone simpre por que le herredas
     public List<PlayerResponseDto> toResponse(List<Player> players) {
         return players.stream()
                 .map(this::toResponse)
+                .filter(Objects::nonNull)
                 .toList();
     }
 

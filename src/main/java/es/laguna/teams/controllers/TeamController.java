@@ -61,6 +61,15 @@ public class TeamController {
         teamService.deletebyId(id);
         return ResponseEntity.noContent().build();
     }
+    @GetMapping("/name/{name}")
+    public ResponseEntity<TeamResponseDto> findTeamByName(
+            @PathVariable String name
+    ){
+        log.info("getName");
+        return ResponseEntity.ok(
+                teamMapper.toResponse(teamService.findTeamByName(name))
+        );
+    }
 
     @PostMapping
     public ResponseEntity<TeamResponseDto> postteam(

@@ -16,3 +16,4 @@ public interface PlayerRepository extends JpaRepository<Player, Long> {
 }
 
 // Optional es cuando tiene variable que la diferencie con las otras que es unica mientra con un list es cuando por ejemplos los jugadores tienen los mismo nombres y quieres que se te devuelvan los que tengan ese nombre
+

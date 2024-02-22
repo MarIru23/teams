@@ -53,6 +53,17 @@ public class PlayerServiceImpl implements PlayerService {
     }
 
     @Override
+    public Player findByNumber(Integer number) {
+        List<Player> players = playerRepository.findByNumber(number);
+        if (players != null && !players.isEmpty()) {
+            return players.get(0);
+        } else {
+            return null;
+        }
+    }
+
+
+    @Override
     public Player patch(Long id, Player player) {
         Player playerToPatch = playerRepository.findById(id).orElseThrow();
         if(player.getName() != null){

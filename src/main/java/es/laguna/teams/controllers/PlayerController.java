@@ -40,7 +40,15 @@ public class PlayerController {
                 playerMapper.toResponse(playerService.findByPlayerId(id))
         );
     }
-
+    @GetMapping("/number/{number}")
+    public ResponseEntity<PlayerResponseDto> getByName(
+            @PathVariable Integer number
+    ){
+        log.info("getByNumber");
+        return ResponseEntity.ok(
+                playerMapper.toResponse(playerService.findByNumber(number))
+        );
+    }
     @GetMapping("/name/{name}")
     public ResponseEntity<PlayerResponseDto> getByName(
             @PathVariable String name

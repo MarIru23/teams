@@ -10,6 +10,9 @@ public interface TeamService {
     List<Team>findall();
     //Busca por Id
     Team findById(Long id);
+
+    Team findTeamByName(String name);
+
     //Es el de crear un equipo
     Team save(Team team);
     //El de eliminar equipo

@@ -1,6 +1,5 @@
 package es.laguna.teams.services;
 
-import es.laguna.teams.Models.Player;
 import es.laguna.teams.Models.Team;
 import es.laguna.teams.Repositories.PlayerRepository;
 import es.laguna.teams.Repositories.TeamRepository;
@@ -34,6 +33,10 @@ public class TeamServiceImpl implements TeamService{
         return teamRepository.findById(id).get();
     }
 
+    @Override
+    public Team findTeamByName(String name) {
+        return teamRepository.findTeamByName(name).get();
+    }
     @Override
     public Team save(Team team) {
         return teamRepository.save(team);
