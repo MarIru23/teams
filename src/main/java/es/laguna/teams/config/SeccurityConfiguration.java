@@ -78,7 +78,6 @@ public class SeccurityConfiguration {
         return authenticationManagerBuilder.build();
     }
 
-    @Bean
     public UserDetailsService userDetailsService() {
         return new UserDetailServiceImpl(userDetailsRepository, passwordEncoder());
     }

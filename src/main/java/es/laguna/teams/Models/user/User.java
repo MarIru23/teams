@@ -1,6 +1,8 @@
 package es.laguna.teams.Models.user;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
@@ -8,33 +10,34 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
 
-@Entity
 @Data
+@AllArgsConstructor
 @NoArgsConstructor
+@Builder
+@Entity
 @Table(name = "user_")
 public class User implements UserDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
     private String firstname;
     private String lastname;
     @Column(unique = true)
     private String email;
     private String password;
 
-    public User(String email, String password){
-        this.email=email;
-        this.password=password;
+    public User(String email, String password) {
+        this.email = email;
+        this.password = password;
     }
     // En esta lo que hace es que llama a la clase role que es la que tenemos que va a haber un usuario admin y un manager
-    @Enumerated(EnumType.STRING)
-    private Role role=Role.USER;
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return null;
     }
-    //Se utiliza el return password y email por que son los que vamos a utilizar para iniciar sesion
+
     @Override
     public String getPassword() {
         return this.password;
@@ -44,7 +47,7 @@ public class User implements UserDetails {
     public String getUsername() {
         return this.email;
     }
-    //Se tienen que poner todos en true el alain lo dijo
+
     @Override
     public boolean isAccountNonExpired() {
         return true;
@@ -62,6 +65,6 @@ public class User implements UserDetails {
 
     @Override
     public boolean isEnabled() {
-        return true ;
+        return true;
     }
 }
