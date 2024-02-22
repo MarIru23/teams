@@ -42,8 +42,8 @@ public class TeamsApplication {
 	public CommandLineRunner init(InitialDataCreationService service) {
 		return args -> {
 			service.createDefaultAdminUser();
-			service.createFakerTeam(10);
-			service.createFakePlayer(100);
+			service.createFakerTeam(7);
+			service.createFakePlayer(70);
 		};
 	}
 }

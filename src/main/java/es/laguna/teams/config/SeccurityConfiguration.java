@@ -37,17 +37,17 @@ public class SeccurityConfiguration {
         RequestMatcher h2ConsoleMatcher = new AntPathRequestMatcher("/h2-console/**");
         http
                 .csrf(csrf -> csrf.disable())
-                .cors()  // Aunque de deprecated, lo sigue cogiendo y permite la comunicacion cruzada entre distintos dominios,
-                // Cosa que normalmente esta prohibido ya que dos dominios no pueden comunicarse pero al tener /api/auth y /api/categories
-                // Queremos que se comuniquen.
+                .cors()
                 .and()
                 .headers().frameOptions().disable() // Deshabilitar frameOptions para permitir la consola H2
                 .and()
                 .authorizeHttpRequests((authorize) -> authorize
                         .requestMatchers(mvc.pattern("/api/products")).permitAll()
-                        .requestMatchers(h2ConsoleMatcher).permitAll()
+                        .requestMatchers(mvc.pattern("/api/teams")).permitAll()             //Aqui son los enlaces a los cuales les permitimos ver los jugadores y equipos
+                        .requestMatchers(mvc.pattern("/api/players")).permitAll()
                         .requestMatchers(mvc.pattern("/api/auth/login")).permitAll()
                         .requestMatchers(mvc.pattern("/api/auth/signup")).permitAll()
+                        .requestMatchers(h2ConsoleMatcher).permitAll()
                         .anyRequest().authenticated()
                 )
                 .addFilterBefore(jwtAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class)
