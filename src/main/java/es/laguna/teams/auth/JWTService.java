@@ -27,7 +27,6 @@ public class JWTService {
                     .withExpiresAt(new Date(System.currentTimeMillis() + jwtExpiration))
                     .sign(algorithm);
         } catch (JWTCreationException exception){
-            // Invalid Signing configuration / Couldn't convert Claims.
         }
         return token;
     }

@@ -27,6 +27,7 @@ public class User implements UserDetails {
         this.email=email;
         this.password=password;
     }
+    // En esta lo que hace es que llama a la clase role que es la que tenemos que va a haber un usuario admin y un manager
     @Enumerated(EnumType.STRING)
     private Role role=Role.USER;
     @Override
