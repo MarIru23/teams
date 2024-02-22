@@ -30,13 +30,19 @@ public class InitialDataCreationService {
             Team team = new Team(
                     null,
                     UUID.randomUUID(),
-                    faker.team().name(),            //
+                    faker.team().name(),
                     faker.lorem().characters(10, 40),
-                    faker.color().hex(),
+                    generateStadiumName(),
                     null
             );
             teamService.save(team);
         }
+    }
+    private String generateStadiumName() {
+        String[] stadiumNames = {
+                "Santiago Bernabéu", "Camp Nou", "Old Trafford", "Anfield", "San Siro", "Allianz Arena", "Signal Iduna Park", "Emirates Stadium"
+        };
+        return stadiumNames[faker.random().nextInt(stadiumNames.length)];
     }
     public void createFakePlayer(int number) {
         if(number <= 0) return;
