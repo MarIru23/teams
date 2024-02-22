@@ -30,7 +30,7 @@ public class InitialDataCreationService {
             Team team = new Team(
                     null,
                     UUID.randomUUID(),
-                    faker.commerce().department(),
+                    faker.team().name(),            //
                     faker.lorem().characters(10, 40),
                     faker.color().hex(),
                     null
@@ -38,7 +38,7 @@ public class InitialDataCreationService {
             teamService.save(team);
         }
     }
-    public void createFakeProducts(int number) {
+    public void createFakePlayer(int number) {
         if(number <= 0) return;
         List<Team> teams = teamService.findall();
 
@@ -48,7 +48,7 @@ public class InitialDataCreationService {
             Player player = new Player(
                     null,
                     UUID.randomUUID(),
-                    faker.commerce().productName(),
+                    faker.football().players(),         //Aqui ponemos de que quieres que el faker tipo
                     faker.number().numberBetween(1, 25),
                     team
             );
