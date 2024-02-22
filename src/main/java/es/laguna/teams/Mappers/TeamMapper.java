@@ -17,7 +17,7 @@ public class TeamMapper {
                 team.getUuid(),
                 team.getName(),
                 team.getCountry(),
-                team.getColor(),
+                team.getStadium(),
                 team.getPlayers()
         );
     }

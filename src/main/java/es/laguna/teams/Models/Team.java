@@ -20,7 +20,7 @@ public class Team {
     private UUID uuid;
     private String name;
     private String country;
-    private String color;
+    private String stadium;
     //Se establece la relacion de un equipo para muchos jugadores
     @OneToMany
     private List<Player> players;

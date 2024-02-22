@@ -15,6 +15,6 @@ public class TeamResponseDto {
     private final UUID uuid;
     private final String name;
     private final String country;
-    private final String color;
+    private final String stadium;
     private final List<Player> players;
 }

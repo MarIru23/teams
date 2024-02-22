@@ -9,5 +9,5 @@ import lombok.Data;
 public class TeamRequestDto {
     private final String name;
     private final String country;
-    private final String color;
+    private final String stadium;
 }

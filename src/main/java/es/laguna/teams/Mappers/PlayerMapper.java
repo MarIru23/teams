@@ -20,6 +20,8 @@ public class PlayerMapper {
         this.teamMapper = teamMapper;
     }
 
+
+    //Esto es para un put es decir update
     public PlayerResponseDto toResponse(Player player) {
         return new PlayerResponseDto(
                 player.getId(),

@@ -1,5 +1,6 @@
 package es.laguna.teams.services;
 
+import es.laguna.teams.Models.Player;
 import es.laguna.teams.Models.Team;
 import es.laguna.teams.Repositories.PlayerRepository;
 import es.laguna.teams.Repositories.TeamRepository;
@@ -47,9 +48,23 @@ public class TeamServiceImpl implements TeamService{
     public Team update(Long Id, Team model) {
         Team date=this.findById(Id);
         date.setName(model.getName());
-        date.setColor(model.getColor());
+        date.setStadium(model.getStadium());
         date.setCountry(model.getCountry());
         //Se guarda el nuevo cambio en el nuevo team ya actualizado
         return teamRepository.save(date);
+    }
+    @Override
+    public Team patch(Long id, Team team) {
+        Team teamToPatch = teamRepository.findById(id).orElseThrow();
+        if(team.getName() != null){
+            teamToPatch.setName(team.getName());
+        }
+        if(team.getCountry() != null){
+            teamToPatch.setCountry(team.getCountry());
+        }
+        if(team.getStadium() != null){
+            teamToPatch.setStadium(team.getStadium());
+        }
+        return teamRepository.save(teamToPatch);
     }
 }

@@ -1,7 +1,10 @@
 package es.laguna.teams.controllers;
 
 import es.laguna.teams.Mappers.TeamMapper;
+import es.laguna.teams.Models.Player;
 import es.laguna.teams.Models.Team;
+import es.laguna.teams.dtos.PlayerRequestDto;
+import es.laguna.teams.dtos.PlayerResponseDto;
 import es.laguna.teams.dtos.TeamRequestDto;
 import es.laguna.teams.dtos.TeamResponseDto;
 import es.laguna.teams.services.TeamService;
@@ -60,7 +63,7 @@ public class TeamController {
     }
 
     @PostMapping
-    public ResponseEntity<TeamResponseDto> insertteam(
+    public ResponseEntity<TeamResponseDto> postteam(
             @RequestBody TeamRequestDto teamRequestDto
             ){
         log.info("insertTeam");
@@ -69,6 +72,24 @@ public class TeamController {
                 teamMapper.toResponse(productSaved)
         );
     }
-
-
+    @PutMapping("/{id}")
+    public ResponseEntity<TeamResponseDto> putPlayer(
+            @PathVariable Long id,
+            @RequestBody TeamRequestDto teamRequestDto
+    ){
+        log.info("putTeam");
+        Team cambioTeam =teamService
+                .update(id, teamMapper.toModel(teamRequestDto));
+        return ResponseEntity.ok(
+                teamMapper.toResponse(cambioTeam)
+        );
+    }
+    @PatchMapping("/patch/{id}")
+    public ResponseEntity<TeamResponseDto> patchProduct(@PathVariable Long id, @RequestBody TeamRequestDto teamRequestDto){
+        log.info("patchGeneralTeam");
+        Team teamPatched = teamService.patch(id, teamMapper.toModel(teamRequestDto));
+        return ResponseEntity.ok(
+                teamMapper.toResponse(teamPatched)
+        );
+    }
 }

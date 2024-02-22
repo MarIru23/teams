@@ -10,7 +10,6 @@ import java.util.UUID;
 
 @Repository
 public interface PlayerRepository extends JpaRepository<Player, Long> {
-    Optional<Player> findTeamByUuid(UUID uuid);
     List<Player> findByNumber(Integer number);
     Player findByName(String name);
 
