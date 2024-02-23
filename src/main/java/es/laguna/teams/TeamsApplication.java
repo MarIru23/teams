@@ -44,8 +44,8 @@ public class TeamsApplication {
 		return args -> {
 			service.createDefaultAdminUser();
 			service.createFakerTeam(7);
-			service.createFakePlayer(70);
-			service.createFakeStaff(30);
+			service.createFakerPlayer(70);
+			service.createFakerStaff(30);
 		};
 	}
 }

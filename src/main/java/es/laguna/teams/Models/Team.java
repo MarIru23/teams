@@ -26,6 +26,6 @@ public class Team {
     @OneToMany
     private List<Player> players;
     @OneToMany
-    private List<Staff> staff;
+    private List<Staff> staffs;
 }
 //El siguiente es el repositories

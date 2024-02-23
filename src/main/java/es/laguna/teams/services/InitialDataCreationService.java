@@ -55,7 +55,7 @@ public class InitialDataCreationService {
         };
         return stadiumNames[faker.random().nextInt(stadiumNames.length)];
     }
-    public void createFakePlayer(int number) {
+    public void createFakerPlayer(int number) {
         if(number <= 0) return;
         List<Team> teams = teamService.findall();
 
@@ -73,7 +73,7 @@ public class InitialDataCreationService {
         }
     }
 
-    public void createFakeStaff(int number) {
+    public void createFakerStaff(int number) {
         if(number <= 0) return;
         List<Team> teams = teamService.findall();
 

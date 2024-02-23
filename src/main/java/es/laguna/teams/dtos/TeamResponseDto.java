@@ -1,6 +1,7 @@
 package es.laguna.teams.dtos;
 
 import es.laguna.teams.Models.Player;
+import es.laguna.teams.Models.Staff;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
@@ -18,4 +19,5 @@ public class TeamResponseDto {
     private final String stadium;
     private final Boolean champions;
     private final List<Player> players;
+    private final List<Staff> staffs;
 }

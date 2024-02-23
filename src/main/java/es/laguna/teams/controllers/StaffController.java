@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/staffs")
 @Slf4j
@@ -25,6 +27,13 @@ public class StaffController {
     public StaffController(StaffMapper staffMapper, StaffService staffService) {
         this.staffMapper = staffMapper;
         this.staffService = staffService;
+    }
+    @GetMapping("")
+    public ResponseEntity<List<StaffResponseDto>> getAllStaff(){
+        log.info("getAllPlayer");
+        return ResponseEntity.ok(
+                staffMapper.toResponse(staffService.findall())
+        );
     }
 
     @GetMapping("/{id}")

@@ -19,7 +19,8 @@ public class TeamMapper {
                 team.getCountry(),
                 team.getStadium(),
                 team.getChampions(),
-                team.getPlayers()
+                team.getPlayers(),
+                team.getStaffs()
         );
     }
     //Esto es siempre lo mismo
