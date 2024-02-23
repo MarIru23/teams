@@ -22,6 +22,7 @@ public class TeamsApplication {
 		System.out.println("\nHola, " + nombreUsuario + "! Gracias por usar nuestra aplicación.");
 		System.out.println("Aqui puedes ver los equipos de nuestra liga: http://localhost:8080/api/teams");
 		System.out.println("Aqui puedes ver los jugadores de nuestra liga: http://localhost:8080/api/players");
+		System.out.println("Aqui el staff que componen loas equipos: http://localhost:8080/api/staffs");
 
 
 	}
@@ -44,6 +45,7 @@ public class TeamsApplication {
 			service.createDefaultAdminUser();
 			service.createFakerTeam(7);
 			service.createFakePlayer(70);
+			service.createFakeStaff(30);
 		};
 	}
 }

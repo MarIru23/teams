@@ -1,5 +1,6 @@
 package es.laguna.teams.services;
 import es.laguna.teams.Models.Player;
+import es.laguna.teams.Models.Staff;
 import es.laguna.teams.Models.Team;
 import es.laguna.teams.Models.user.User;
 import lombok.RequiredArgsConstructor;
@@ -14,6 +15,7 @@ import java.util.UUID;
 @RequiredArgsConstructor
 public class InitialDataCreationService {
     private final TeamService teamService;
+    private final StaffService staffService;
     private final PlayerService playerService;
     private final UserDetailServiceImpl userDetailsService;
     private final Faker faker = new Faker(new Locale("en-US"));
@@ -34,6 +36,7 @@ public class InitialDataCreationService {
                     generateCountry(),
                     generateStadiumName(),
                     isChampion,
+                    null,
                     null
             );
             teamService.save(team);
@@ -69,4 +72,30 @@ public class InitialDataCreationService {
             playerService.save(player);
         }
     }
+
+    public void createFakeStaff(int number) {
+        if(number <= 0) return;
+        List<Team> teams = teamService.findall();
+
+        for (int i = 0; i < number; i++) {
+            int teamIndex = faker.number().numberBetween(0, teams.size());
+            Team team = teams.get(teamIndex);
+            Staff staff = new Staff(
+                    null,
+                    UUID.randomUUID(),
+                    faker.football().coaches(),      //Aqui ponemos de tipo entreandor
+                    generateRole(),
+                    faker.number().numberBetween(18, 60),
+                    team
+            );
+            staffService.save(staff);
+        }
+    }
+    private String generateRole() {
+        String[] role = {
+                "Enternador", "Segundo-Entrenador", "Entrenador-Porteros", "Medico"
+        };
+        return role[faker.random().nextInt(role.length)];
+    }
+
 }

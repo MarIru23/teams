@@ -25,5 +25,7 @@ public class Team {
     //Se establece la relacion de un equipo para muchos jugadores
     @OneToMany
     private List<Player> players;
+    @OneToMany
+    private List<Staff> staff;
 }
 //El siguiente es el repositories

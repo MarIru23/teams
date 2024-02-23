@@ -37,6 +37,7 @@ public class TeamMapper {
                 teamRequestDto.getCountry(),
                 teamRequestDto.getStadium(),
                 teamRequestDto.getChampions(),
+                null,
                 null
         );
     }
@@ -45,6 +46,7 @@ public class TeamMapper {
     public Team toModelfromRequestDto(Long team_Id) {
         return new Team(
                 team_Id,
+                null,
                 null,
                 null,
                 null,

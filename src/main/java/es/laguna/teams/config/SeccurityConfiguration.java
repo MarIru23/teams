@@ -45,6 +45,7 @@ public class SeccurityConfiguration {
                         .requestMatchers(mvc.pattern("/api/products")).permitAll()
                         .requestMatchers(mvc.pattern("/api/teams")).permitAll()             //Aqui son los enlaces a los cuales les permitimos ver los jugadores y equipos
                         .requestMatchers(mvc.pattern("/api/players")).permitAll()
+                        .requestMatchers(mvc.pattern("/api/staffs")).permitAll()
                         .requestMatchers(mvc.pattern("/api/auth/login")).permitAll()
                         .requestMatchers(mvc.pattern("/api/auth/signup")).permitAll()
                         .requestMatchers(h2ConsoleMatcher).permitAll()
