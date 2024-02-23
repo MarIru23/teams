@@ -30,7 +30,7 @@ public class InitialDataCreationService {
             Team team = new Team(
                     null,
                     UUID.randomUUID(),
-                    faker.team().name(),
+                    faker.englandfootball().team(),
                     generateCountry(),
                     generateStadiumName(),
                     isChampion,
@@ -62,7 +62,7 @@ public class InitialDataCreationService {
             Player player = new Player(
                     null,
                     UUID.randomUUID(),
-                    faker.football().players(),         //Aqui ponemos de que quieres que el faker tipo
+                    faker.football().players(),      //Aqui ponemos de que quieres que el faker tipo
                     faker.number().numberBetween(1, 25),
                     team
             );
