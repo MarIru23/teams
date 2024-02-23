@@ -49,18 +49,7 @@ public class PlayerController {
                 playerMapper.toResponse(playerService.findByNumber(number))
         );
     }
-/*
-    @GetMapping("/dorsal/{number}")
-    public ResponseEntity<PlayerResponseDto> getMaxDorsal(
-            @PathVariable Integer number
-    ){
-        log.info("getByNumber");
-        return ResponseEntity.ok(
-                (PlayerResponseDto) playerMapper.toResponse(playerService.FindMaxDorsal(number))
-        );
-    }
 
- */
     @GetMapping("/name/{name}")
     public ResponseEntity<PlayerResponseDto> getByName(
             @PathVariable String name
@@ -80,18 +69,22 @@ public class PlayerController {
         return ResponseEntity.noContent().build();
     }
 
-    //save
-    @PostMapping
-    public ResponseEntity<PlayerResponseDto> postPlayer(
-            @RequestBody PlayerRequestDto playerRequestDto
+    @GetMapping("/MaxDorsal")
+    public ResponseEntity<List<PlayerResponseDto>> getMaxDorsal(
+            @RequestParam Integer MaxDorsal
     ) {
-        log.info("addPlayer");
-        Player playerSaved = playerService.save(playerMapper.toModel(playerRequestDto));
-        return ResponseEntity.created(null).body(
-                playerMapper.toResponse(playerSaved)
+        log.info("getMaxDorsal");
+
+        if (MaxDorsal < 0) {
+            return ResponseEntity.badRequest().build();
+        }
+
+        return ResponseEntity.ok(
+                playerMapper.toResponse(playerService.findByNumberGreaterThanEqual(MaxDorsal))
         );
     }
-    //update
+
+
     @PutMapping("/{id}")
     public ResponseEntity<PlayerResponseDto> putPlayer(
             @PathVariable Long id,

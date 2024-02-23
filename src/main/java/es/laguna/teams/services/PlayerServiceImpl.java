@@ -88,12 +88,12 @@ public class PlayerServiceImpl implements PlayerService {
 
         return playerRepository.save(change);
     }
-}
-    /*
+
+
     @Override
-    public List<Player> FindMaxDorsal(Integer number) {
-        List<Player> players = playerRepository.FindMaxDorsal(number);
+    public List<Player> findByNumberGreaterThanEqual(Integer number) {
+        List<Player> players = playerRepository.findByNumberGreaterThanEqual(number);
             return players;
         }
     }
-*/
+

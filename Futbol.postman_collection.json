@@ -753,6 +753,43 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Get Max Dorsal",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ0ZWFtcyIsInN1YiI6InVzZXIiLCJleHAiOjE3MDg4MDQxNDN9.Yk9LkQ9O-eoFUA3d1w6Vg4WXe_BiTPEgePChuj_jvbA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/players/MaxDorsal?MaxDorsal=23",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"players",
+								"MaxDorsal"
+							],
+							"query": [
+								{
+									"key": "MaxDorsal",
+									"value": "23"
+								}
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
