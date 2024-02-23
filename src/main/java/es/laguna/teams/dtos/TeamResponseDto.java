@@ -16,5 +16,6 @@ public class TeamResponseDto {
     private final String name;
     private final String country;
     private final String stadium;
+    private final Boolean champions;
     private final List<Player> players;
 }

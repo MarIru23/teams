@@ -1,6 +1,5 @@
 package es.laguna.teams.services;
 
-import es.laguna.teams.Models.Player;
 import es.laguna.teams.Models.Team;
 
 import java.util.List;
@@ -14,7 +13,10 @@ public interface TeamService {
 
     Team findTeamByName(String name);
 
+
     Team findTeamByUuid(UUID uuid);
+
+    List<Team> findByChampions(Boolean champions);
 
     //Es el de crear un equipo
     Team save(Team team);

@@ -44,6 +44,7 @@ public class TeamController {
         );
     }
 
+
     @GetMapping("/{id}")
     public ResponseEntity<TeamResponseDto> getTeamById(
             @PathVariable Long id
@@ -71,7 +72,12 @@ public class TeamController {
                 teamMapper.toResponse(teamService.findTeamByName(name))
         );
     }
-
+    @GetMapping("/champions/{champions}")
+    public ResponseEntity<List<TeamResponseDto>> findTeamsByChampions(@PathVariable boolean champions) {
+        log.info("findTeamsByChampions");
+        List<TeamResponseDto> teams = teamMapper.toResponse(teamService.findByChampions(champions));
+        return ResponseEntity.ok(teams);
+    }
 
     @GetMapping("/uuid/{uuid}")
     public ResponseEntity<TeamResponseDto> findTeamByUuid(

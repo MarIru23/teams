@@ -30,6 +30,10 @@ public class TeamServiceImpl implements TeamService{
     }
 
     @Override
+    public List<Team> findByChampions(Boolean champions) {
+        return teamRepository.findByChampions(champions);
+    }
+    @Override
     public Team findTeamByUuid(UUID uuid) {
         return teamRepository.findTeamByUuid(uuid).get();
     }
@@ -44,8 +48,6 @@ public class TeamServiceImpl implements TeamService{
     public Team findTeamByName(String name) {
         return teamRepository.findTeamByName(name).get();
     }
-
-
 
     @Override
     public Team save(Team team) {
