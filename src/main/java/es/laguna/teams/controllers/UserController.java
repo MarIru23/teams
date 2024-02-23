@@ -1,5 +1,7 @@
 package es.laguna.teams.controllers;
 
+import es.laguna.teams.Models.user.User;
+import es.laguna.teams.dtos.PlayerResponseDto;
 import es.laguna.teams.dtos.UserDto.UserRequestDto;
 import es.laguna.teams.dtos.UserDto.UserResponseDto;
 import es.laguna.teams.Mappers.UserMapper;
@@ -8,9 +10,11 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Collections;
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/user")
-@CrossOrigin                        // PERMITE EL INTERCAMBIO ENTRE BACKEND Y FRONTEND PUERTO DE ANGULAR
 @RequiredArgsConstructor
 public class UserController {
     private final UserDetailServiceImpl userService;
