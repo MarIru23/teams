@@ -53,6 +53,13 @@ public class TeamController {
         );
     }
 
+    @GetMapping("/champions/{champions}")
+    public ResponseEntity<List<TeamResponseDto>> findTeamsByChampions(@PathVariable boolean champions) {
+        log.info("findTeamsByChampions");
+        List<TeamResponseDto> teams = teamMapper.toResponse(teamService.findByChampions(champions));
+        return ResponseEntity.ok(teams);
+    }
+
     @DeleteMapping("/{id}")
     public ResponseEntity<TeamResponseDto> deleteTeam(
           @PathVariable Long id

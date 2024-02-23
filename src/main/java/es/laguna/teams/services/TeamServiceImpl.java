@@ -56,6 +56,12 @@ public class TeamServiceImpl implements TeamService{
         //Se guarda el nuevo cambio en el nuevo team ya actualizado
         return teamRepository.save(date);
     }
+
+    @Override
+    public List<Team> findByChampions(boolean champions) {
+        return teamRepository.findByChampions(champions);
+    }
+
     @Override
     public Team patch(Long id, Team team) {
         Team teamToPatch = teamRepository.findById(id).orElseThrow();

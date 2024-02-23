@@ -21,8 +21,11 @@ public class Team {
     private String name;
     private String country;
     private String stadium;
+    private Boolean champions;
     //Se establece la relacion de un equipo para muchos jugadores
     @OneToMany
     private List<Player> players;
+
+
 }
 //El siguiente es el repositories

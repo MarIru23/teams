@@ -21,5 +21,7 @@ public interface TeamService {
     //Actualiza equipo y esto puede ser model o cualquier otro nombre es solo el nombre que se le da
     Team update(Long Id, Team model);
 
+    List<Team> findByChampions(boolean champions);
+
     Team patch(Long id, Team team);
 }

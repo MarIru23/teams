@@ -4,6 +4,7 @@ import es.laguna.teams.Models.Team;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -11,8 +12,8 @@ import java.util.UUID;
 @Repository
 public interface TeamRepository extends JpaRepository<Team, Long>{
     Optional<Team> findTeamByUuid(UUID uuid);
-
-    Optional<Team> findTeamByName(String name);
+    Optional<Team> findTeamByName(String name); //Solo una cosa
+    List<Team> findByChampions(Boolean champions);
 
 
 }

@@ -26,17 +26,25 @@ public class InitialDataCreationService {
     public void createFakerTeam(int number) {
         if(number <= 0) return;
         for (int i = 0; i < number; i++) {
-
+            boolean isChampion = faker.bool().bool(); //Aqui te va a generar un bolean que puede ser si o no y es random
             Team team = new Team(
                     null,
                     UUID.randomUUID(),
                     faker.team().name(),
-                    faker.lorem().characters(10, 40),
+                    generateCountry(),
                     generateStadiumName(),
+                    isChampion,
                     null
             );
             teamService.save(team);
         }
+    }
+
+    private String generateCountry() {
+        String[] country = {
+                "Ghana", "España", "Marruecos", "Portugal", "Francia", "Belgica", "Alemania", "Brasil"
+        };
+        return country[faker.random().nextInt(country.length)];
     }
     private String generateStadiumName() {
         String[] stadiumNames = {
