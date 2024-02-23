@@ -336,6 +336,38 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Have Champions",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ0ZWFtcyIsInN1YiI6InVzZXIiLCJleHAiOjE3MDg3MTYwMDd9.1EVtSHQng4vZd609fzCb7qNbiz4UNZdoU9YHYj5wD2c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/teams/champions/false",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"teams",
+								"champions",
+								"false"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
