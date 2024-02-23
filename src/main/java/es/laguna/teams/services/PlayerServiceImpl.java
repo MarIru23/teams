@@ -31,20 +31,20 @@ public class PlayerServiceImpl implements PlayerService {
     public Player findByPlayerId(Long id) {
         return playerRepository.findById(id).orElseThrow();
     }
- //   @Override
- //   public boolean findByName(String name) {
-  //      return playerRepository.findByName(name).equals(name);
-   // }
+    //   @Override
+    //   public boolean findByName(String name) {
+    //      return playerRepository.findByName(name).equals(name);
+    // }
 
     @Override
     public Player save(Player player) {
         return playerRepository.save(player);
     }
+
     @Override
     public void deleteById(Long id) {
         playerRepository.deleteById(id);
     }
-
 
 
     @Override
@@ -66,13 +66,13 @@ public class PlayerServiceImpl implements PlayerService {
     @Override
     public Player patch(Long id, Player player) {
         Player playerToPatch = playerRepository.findById(id).orElseThrow();
-        if(player.getName() != null){
+        if (player.getName() != null) {
             playerToPatch.setName(player.getName());
         }
-        if(player.getNumber() != null){
+        if (player.getNumber() != null) {
             playerToPatch.setNumber(player.getNumber());
         }
-        if(player.getTeam() != null){
+        if (player.getTeam() != null) {
             playerToPatch.setTeam(player.getTeam());
         }
         return playerRepository.save(playerToPatch);
@@ -80,7 +80,7 @@ public class PlayerServiceImpl implements PlayerService {
 
     @Override
     public Player update(Long Id, Player model) {
-        Player change=this.findByPlayerId(Id);
+        Player change = this.findByPlayerId(Id);
 
         change.setName(model.getName());
         change.setNumber(model.getNumber());
@@ -88,10 +88,12 @@ public class PlayerServiceImpl implements PlayerService {
 
         return playerRepository.save(change);
     }
+}
+    /*
     @Override
     public List<Player> FindMaxDorsal(Integer number) {
         List<Player> players = playerRepository.FindMaxDorsal(number);
             return players;
         }
     }
-
+*/

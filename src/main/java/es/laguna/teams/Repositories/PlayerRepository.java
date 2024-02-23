@@ -12,7 +12,7 @@ import java.util.UUID;
 public interface PlayerRepository extends JpaRepository<Player, Long> {
     List<Player> findByNumber(Integer number);
     Player findByName(String name);
-    List<Player> FindMaxDorsal(Integer number);
+   // List<Player> FindMaxDorsal(Integer number);
 
 }
 

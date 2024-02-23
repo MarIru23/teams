@@ -49,7 +49,7 @@ public class PlayerController {
                 playerMapper.toResponse(playerService.findByNumber(number))
         );
     }
-
+/*
     @GetMapping("/dorsal/{number}")
     public ResponseEntity<PlayerResponseDto> getMaxDorsal(
             @PathVariable Integer number
@@ -59,6 +59,8 @@ public class PlayerController {
                 (PlayerResponseDto) playerMapper.toResponse(playerService.FindMaxDorsal(number))
         );
     }
+
+ */
     @GetMapping("/name/{name}")
     public ResponseEntity<PlayerResponseDto> getByName(
             @PathVariable String name
