@@ -41,12 +41,22 @@ public class PlayerController {
         );
     }
     @GetMapping("/number/{number}")
-    public ResponseEntity<PlayerResponseDto> getByName(
+    public ResponseEntity<PlayerResponseDto> getByNumber(
             @PathVariable Integer number
     ){
         log.info("getByNumber");
         return ResponseEntity.ok(
                 playerMapper.toResponse(playerService.findByNumber(number))
+        );
+    }
+
+    @GetMapping("/dorsal/{number}")
+    public ResponseEntity<PlayerResponseDto> getMaxDorsal(
+            @PathVariable Integer number
+    ){
+        log.info("getByNumber");
+        return ResponseEntity.ok(
+                (PlayerResponseDto) playerMapper.toResponse(playerService.FindMaxDorsal(number))
         );
     }
     @GetMapping("/name/{name}")

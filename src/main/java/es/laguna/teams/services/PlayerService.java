@@ -20,6 +20,8 @@ public interface PlayerService {
 
     Player findByNumber(Integer number);
 
+    List<Player> FindMaxDorsal(Integer number);
+
     Player patch(Long id, Player player);
     
 }
