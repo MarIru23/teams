@@ -14,6 +14,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/api/teams")
@@ -68,6 +69,17 @@ public class TeamController {
         log.info("getName");
         return ResponseEntity.ok(
                 teamMapper.toResponse(teamService.findTeamByName(name))
+        );
+    }
+
+
+    @GetMapping("/uuid/{uuid}")
+    public ResponseEntity<TeamResponseDto> findTeamByUuid(
+            @PathVariable UUID uuid
+    ){
+        log.info("getUUID");
+        return ResponseEntity.ok(
+                teamMapper.toResponse(teamService.findTeamByUuid(uuid))
         );
     }
 

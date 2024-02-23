@@ -27,18 +27,4 @@ public class UserController {
         return ResponseEntity.ok(userMapper.toResponse(userService.loadUserByUsername(email)));
     }
 
-    @PostMapping
-    public ResponseEntity<UserResponseDto> postUser(
-            @RequestBody UserRequestDto user
-    ) {
-        return ResponseEntity.ok(userMapper.toResponse(userService.save(userMapper.toModel(user))));
-    }
-
-    @PutMapping("/{email}")
-    public ResponseEntity<UserResponseDto> updateUser(
-            @PathVariable String email,
-            @RequestBody UserRequestDto user
-    ) {
-        return ResponseEntity.ok(userMapper.toResponse(userService.updateUser(email, userMapper.toModel(user))));
-    }
 }

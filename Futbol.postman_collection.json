@@ -141,6 +141,46 @@
 					"response": []
 				},
 				{
+					"name": "PUT TEAM",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ0ZWFtcyIsInN1YiI6InVzZXIiLCJleHAiOjE3MDg3MTYwMDd9.1EVtSHQng4vZd609fzCb7qNbiz4UNZdoU9YHYj5wD2c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"name\": \"Barca FC\",\r\n    \"country\": \"España\",\r\n    \"stadium\" : \"Camp nou\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/teams/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"teams",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Save",
 					"event": [
 						{
@@ -187,46 +227,6 @@
 							"path": [
 								"api",
 								"teams"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "PUT TEAM",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ0ZWFtcyIsInN1YiI6InVzZXIiLCJleHAiOjE3MDg3MTYwMDd9.1EVtSHQng4vZd609fzCb7qNbiz4UNZdoU9YHYj5wD2c",
-									"type": "string"
-								}
-							]
-						},
-						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n\t\"name\": \"Barca FC\",\r\n    \"country\": \"España\",\r\n    \"stadium\" : \"Camp nou\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:8080/api/teams/1",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"api",
-								"teams",
-								"1"
 							]
 						}
 					},
@@ -300,6 +300,38 @@
 								"teams",
 								"name",
 								"Indiana oracles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find BY UUID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ0ZWFtcyIsInN1YiI6InVzZXIiLCJleHAiOjE3MDg3MTYwMDd9.1EVtSHQng4vZd609fzCb7qNbiz4UNZdoU9YHYj5wD2c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/teams/uuid/aa0a91a0-74f9-46ee-81e6-b232949cf44d",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"teams",
+								"uuid",
+								"aa0a91a0-74f9-46ee-81e6-b232949cf44d"
 							]
 						}
 					},
@@ -776,6 +808,49 @@
 								"api",
 								"auth",
 								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET USER",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ0ZWFtcyIsInN1YiI6InVzZXIiLCJleHAiOjE3MDg3MTYwMDd9.1EVtSHQng4vZd609fzCb7qNbiz4UNZdoU9YHYj5wD2c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/user/user3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"user",
+								"user3"
 							]
 						}
 					},

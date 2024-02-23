@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.UUID;
+
 //estos dos se ponen para que te para utilizar el autowired
 @Service
 @Slf4j
@@ -27,6 +29,11 @@ public class TeamServiceImpl implements TeamService{
         return teamRepository.findAll();
     }
 
+    @Override
+    public Team findTeamByUuid(UUID uuid) {
+        return teamRepository.findTeamByUuid(uuid).get();
+    }
+
     //Siempre que busque un elemento y te lo retorne hay que poner obligatoria mente orElseThrow para que no te de error
     @Override
     public Team findById(Long id) {
@@ -37,6 +44,9 @@ public class TeamServiceImpl implements TeamService{
     public Team findTeamByName(String name) {
         return teamRepository.findTeamByName(name).get();
     }
+
+
+
     @Override
     public Team save(Team team) {
         return teamRepository.save(team);

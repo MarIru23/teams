@@ -4,6 +4,7 @@ import es.laguna.teams.Models.Player;
 import es.laguna.teams.Models.Team;
 
 import java.util.List;
+import java.util.UUID;
 
 public interface TeamService {
     //Retorna todos por eso es lista
@@ -12,6 +13,8 @@ public interface TeamService {
     Team findById(Long id);
 
     Team findTeamByName(String name);
+
+    Team findTeamByUuid(UUID uuid);
 
     //Es el de crear un equipo
     Team save(Team team);
