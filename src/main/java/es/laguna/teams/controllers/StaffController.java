@@ -43,4 +43,14 @@ public class StaffController {
                 staffMapper.toResponse(staffService.findById(id))
         );
     }
+
+
+    @GetMapping("/name/{name}")
+    public ResponseEntity<StaffResponseDto> getByName(@PathVariable String name){
+        log.info("getName");
+        return ResponseEntity.ok(
+                staffMapper.toResponse(staffService.findByName(name))
+        );
+    }
+
 }

@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "15427701-de18-476c-9a2c-5d4b26afb53a",
+		"_postman_id": "4eec4510-8417-40d8-a673-86b756940951",
 		"name": "Futbol",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "30973449"
+		"_exporter_id": "30973359"
 	},
 	"item": [
 		{
@@ -141,46 +141,6 @@
 					"response": []
 				},
 				{
-					"name": "PUT TEAM",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ0ZWFtcyIsInN1YiI6InVzZXIiLCJleHAiOjE3MDg3MTYwMDd9.1EVtSHQng4vZd609fzCb7qNbiz4UNZdoU9YHYj5wD2c",
-									"type": "string"
-								}
-							]
-						},
-						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n\t\"name\": \"Barca FC\",\r\n    \"country\": \"España\",\r\n    \"stadium\" : \"Camp nou\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:8080/api/teams/1",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"api",
-								"teams",
-								"1"
-							]
-						}
-					},
-					"response": []
-				},
-				{
 					"name": "Save",
 					"event": [
 						{
@@ -227,6 +187,46 @@
 							"path": [
 								"api",
 								"teams"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT TEAM",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ0ZWFtcyIsInN1YiI6InVzZXIiLCJleHAiOjE3MDg3MTYwMDd9.1EVtSHQng4vZd609fzCb7qNbiz4UNZdoU9YHYj5wD2c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"name\": \"Barca FC\",\r\n    \"country\": \"España\",\r\n    \"stadium\" : \"Camp nou\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/teams/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"teams",
+								"1"
 							]
 						}
 					},
@@ -306,46 +306,14 @@
 					"response": []
 				},
 				{
-					"name": "Find BY UUID",
+					"name": "HAS CHAMPIONS",
 					"request": {
 						"auth": {
 							"type": "bearer",
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ0ZWFtcyIsInN1YiI6InVzZXIiLCJleHAiOjE3MDg3MTYwMDd9.1EVtSHQng4vZd609fzCb7qNbiz4UNZdoU9YHYj5wD2c",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:8080/api/teams/uuid/aa0a91a0-74f9-46ee-81e6-b232949cf44d",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"api",
-								"teams",
-								"uuid",
-								"aa0a91a0-74f9-46ee-81e6-b232949cf44d"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Have Champions",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ0ZWFtcyIsInN1YiI6InVzZXIiLCJleHAiOjE3MDg3MTYwMDd9.1EVtSHQng4vZd609fzCb7qNbiz4UNZdoU9YHYj5wD2c",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ0ZWFtcyIsInN1YiI6InVzZXIiLCJleHAiOjE3MDg3ODE2ODd9.em8dJQX_skpRGDP2eUw9eDLErLUL1kiFzPUBKfHDUZo",
 									"type": "string"
 								}
 							]
@@ -364,6 +332,44 @@
 								"teams",
 								"champions",
 								"false"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LOCALDATE TOCHAMPIONS",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ0ZWFtcyIsInN1YiI6InVzZXIiLCJleHAiOjE3MDg4NzcyMTF9.vLEtZ8Gb-x34-X_jkP_h_0DNs9_TkAzik0QG9ZW0_vI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/teams/toChampions/2?toChampions=true",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"teams",
+								"toChampions",
+								"2"
+							],
+							"query": [
+								{
+									"key": "toChampions",
+									"value": "true"
+								}
 							]
 						}
 					},
@@ -755,14 +761,14 @@
 					"response": []
 				},
 				{
-					"name": "Get Max Dorsal",
+					"name": "GET MAX DORSAL",
 					"request": {
 						"auth": {
 							"type": "bearer",
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ0ZWFtcyIsInN1YiI6InVzZXIiLCJleHAiOjE3MDg4MDQxNDN9.Yk9LkQ9O-eoFUA3d1w6Vg4WXe_BiTPEgePChuj_jvbA",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJlcm9za2V0YSIsInN1YiI6InVzZXIiLCJleHAiOjE3MDg3OTI2NTZ9.e6hioIRFgB_8X4VT4hLuPDguy8hAvztxgL0l_WjrrP4",
 									"type": "string"
 								}
 							]
@@ -770,7 +776,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/api/players/MaxDorsal?MaxDorsal=23",
+							"raw": "http://localhost:8080/api/players/max-dorsal?dorsal=10",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -779,12 +785,12 @@
 							"path": [
 								"api",
 								"players",
-								"MaxDorsal"
+								"max-dorsal"
 							],
 							"query": [
 								{
-									"key": "MaxDorsal",
-									"value": "23"
+									"key": "dorsal",
+									"value": "10"
 								}
 							]
 						}
@@ -881,36 +887,29 @@
 						}
 					},
 					"response": []
-				},
+				}
+			]
+		},
+		{
+			"name": "Staff",
+			"item": [
 				{
-					"name": "GET USER",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
+					"name": "GET ALL",
 					"request": {
 						"auth": {
 							"type": "bearer",
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ0ZWFtcyIsInN1YiI6InVzZXIiLCJleHAiOjE3MDg3MTYwMDd9.1EVtSHQng4vZd609fzCb7qNbiz4UNZdoU9YHYj5wD2c",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ0ZWFtcyIsInN1YiI6InVzZXIiLCJleHAiOjE3MDg4NzcyMTF9.vLEtZ8Gb-x34-X_jkP_h_0DNs9_TkAzik0QG9ZW0_vI",
 									"type": "string"
 								}
 							]
 						},
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
 						"url": {
-							"raw": "http://localhost:8080/api/user/user3",
+							"raw": "http://localhost:8080/api/staffs",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -918,8 +917,70 @@
 							"port": "8080",
 							"path": [
 								"api",
-								"user",
-								"user3"
+								"staffs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET BY ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ0ZWFtcyIsInN1YiI6InVzZXIiLCJleHAiOjE3MDg4NzcyMTF9.vLEtZ8Gb-x34-X_jkP_h_0DNs9_TkAzik0QG9ZW0_vI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/staffs/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"staffs",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET BY NAME",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ0ZWFtcyIsInN1YiI6InVzZXIiLCJleHAiOjE3MDg4NzcyMTF9.vLEtZ8Gb-x34-X_jkP_h_0DNs9_TkAzik0QG9ZW0_vI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/staffs/name/Jurgen Klopp",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"staffs",
+								"name",
+								"Jurgen Klopp"
 							]
 						}
 					},

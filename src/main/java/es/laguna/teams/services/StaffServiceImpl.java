@@ -25,6 +25,17 @@ public class StaffServiceImpl implements StaffService{
     public List<Staff> findall() {
         return staffRepository.findAll();
     }
+
+    @Override
+    public Staff findByName(String name) {
+        List<Staff> staffs = staffRepository.findByName(name);
+        if (staffs != null && !staffs.isEmpty()) {
+            return staffs.get(0);
+        } else {
+            return null;
+        }
+    }
+
     @Override
     public Staff findById(Long id) {
         return staffRepository.findById(id).get();

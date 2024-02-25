@@ -10,6 +10,7 @@ public interface StaffService {
 
     List<Staff> findall();
 
+    Staff findByName(String name); //Lo que quieres que te devuelva
     Staff findById(Long id);
 
     Staff save(Staff staff);
