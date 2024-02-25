@@ -368,6 +368,44 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Patch toChampions",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ0ZWFtcyIsInN1YiI6InVzZXIiLCJleHAiOjE3MDg5NTA4Nzh9.cHP8rUoBiL-DMzqWXEFOyiQTOPU5utW2tm29oDaIxyM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/teams/toChampions/3?champions=false",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"teams",
+								"toChampions",
+								"3"
+							],
+							"query": [
+								{
+									"key": "champions",
+									"value": "false"
+								}
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -770,7 +808,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/api/players/MaxDorsal?MaxDorsal=23",
+							"raw": "http://localhost:8080/api/players/MaxDorsal?MaxDorsal=20",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -784,7 +822,7 @@
 							"query": [
 								{
 									"key": "MaxDorsal",
-									"value": "23"
+									"value": "20"
 								}
 							]
 						}
