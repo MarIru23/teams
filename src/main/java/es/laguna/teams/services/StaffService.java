@@ -19,4 +19,6 @@ public interface StaffService {
 
     Staff update(Long Id, Staff model);
 
+    List<Staff> deleteStaffByYearsLessThanEqual(Integer years);
+
 }

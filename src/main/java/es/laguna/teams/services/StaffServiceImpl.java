@@ -4,6 +4,7 @@ import es.laguna.teams.Models.Staff;
 import es.laguna.teams.Models.Team;
 import es.laguna.teams.Repositories.StaffRepository;
 import es.laguna.teams.Repositories.TeamRepository;
+import jakarta.transaction.Transactional;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -59,5 +60,12 @@ public class StaffServiceImpl implements StaffService{
         date.setYears(model.getYears());
         //Se guarda el nuevo cambio en el nuevo team ya actualizado
         return staffRepository.save(date);
+    }
+
+    @Override
+    @Transactional
+    public List<Staff> deleteStaffByYearsLessThanEqual(Integer years) {
+        List<Staff> staffs = staffRepository.deleteStaffByYearsLessThanEqual(years);
+        return staffs;
     }
 }
