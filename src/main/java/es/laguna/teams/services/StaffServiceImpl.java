@@ -1,5 +1,6 @@
 package es.laguna.teams.services;
 
+import es.laguna.teams.Models.Player;
 import es.laguna.teams.Models.Staff;
 import es.laguna.teams.Models.Team;
 import es.laguna.teams.Repositories.StaffRepository;
@@ -48,5 +49,15 @@ public class StaffServiceImpl implements StaffService{
         date.setYears(model.getYears());
         //Se guarda el nuevo cambio en el nuevo team ya actualizado
         return staffRepository.save(date);
+    }
+
+    @Override
+    public Staff findByName(String name) {
+        List<Staff> staffs = staffRepository.findByName(name);
+        if (staffs != null && !staffs.isEmpty()) {
+            return staffs.get(0);
+        } else {
+            return null;
+        }
     }
 }

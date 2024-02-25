@@ -964,6 +964,104 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "Staff",
+			"item": [
+				{
+					"name": "Get All",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ0ZWFtcyIsInN1YiI6InVzZXIiLCJleHAiOjE3MDg5NTA4Nzh9.cHP8rUoBiL-DMzqWXEFOyiQTOPU5utW2tm29oDaIxyM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/staffs",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"staffs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get By ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ0ZWFtcyIsInN1YiI6InVzZXIiLCJleHAiOjE3MDg5NTA4Nzh9.cHP8rUoBiL-DMzqWXEFOyiQTOPU5utW2tm29oDaIxyM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/staffs/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"staffs",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get By Name",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ0ZWFtcyIsInN1YiI6InVzZXIiLCJleHAiOjE3MDg5NTA4Nzh9.cHP8rUoBiL-DMzqWXEFOyiQTOPU5utW2tm29oDaIxyM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/staffs/name/Jorge Sampaoli",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"staffs",
+								"name",
+								"Jorge Sampaoli"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }

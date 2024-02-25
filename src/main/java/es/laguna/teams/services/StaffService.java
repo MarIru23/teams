@@ -17,5 +17,5 @@ public interface StaffService {
     void deleteById(Long id);
 
     Staff update(Long Id, Staff model);
-
+    Staff findByName(String name);
 }
