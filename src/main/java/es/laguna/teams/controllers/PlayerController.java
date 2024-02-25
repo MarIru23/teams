@@ -77,11 +77,11 @@ public class PlayerController {
 
         if (MaxDorsal < 0) {
             return ResponseEntity.badRequest().build();
-        }
+    }
 
         return ResponseEntity.ok(
                 playerMapper.toResponse(playerService.findByNumberGreaterThanEqual(MaxDorsal))
-        );
+            );
     }
 
 

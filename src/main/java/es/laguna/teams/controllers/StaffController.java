@@ -79,4 +79,30 @@ public class StaffController {
                 staffMapper.toResponse(cambioStaff)
         );
     }
+
+    @DeleteMapping("/delete/years")
+    public ResponseEntity<List<StaffResponseDto>> deleteYears(
+            @RequestParam Integer years
+    ) {
+        log.info("getYears");
+
+        if (years < 0) {
+            return ResponseEntity.badRequest().build();
+        }
+
+        return ResponseEntity.ok(
+                staffMapper.toResponse(staffService.deleteStaffByYearsLessThanEqual(years))
+        );
+    }
+
+    @GetMapping("/contains/letter")
+    public ResponseEntity<List<StaffResponseDto>> deleteYears(
+            @RequestParam String letter
+    ) {
+        log.info("getletter");
+
+        return ResponseEntity.ok(
+                staffMapper.toResponse(staffService.findByNameStartingWith(letter))
+        );
+    }
 }

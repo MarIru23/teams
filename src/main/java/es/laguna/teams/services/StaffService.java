@@ -18,4 +18,8 @@ public interface StaffService {
 
     Staff update(Long Id, Staff model);
     Staff findByName(String name);
+
+    List<Staff>deleteStaffByYearsLessThanEqual(Integer years);
+
+    List<Staff> findByNameStartingWith(String letter);
 }

@@ -800,7 +800,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ0ZWFtcyIsInN1YiI6InVzZXIiLCJleHAiOjE3MDg4MDQxNDN9.Yk9LkQ9O-eoFUA3d1w6Vg4WXe_BiTPEgePChuj_jvbA",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ0ZWFtcyIsInN1YiI6InVzZXIiLCJleHAiOjE3MDg5NjQ5OTl9.g32_sdZkrgOLCitqoc6TEsVKw__zhciQ6EmHIn59fro",
 									"type": "string"
 								}
 							]
@@ -1058,6 +1058,82 @@
 								"api",
 								"staffs",
 								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Staffs",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ0ZWFtcyIsInN1YiI6InVzZXIiLCJleHAiOjE3MDg5NjQ5OTl9.g32_sdZkrgOLCitqoc6TEsVKw__zhciQ6EmHIn59fro",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/staffs/delete/years?years=25",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"staffs",
+								"delete",
+								"years"
+							],
+							"query": [
+								{
+									"key": "years",
+									"value": "25"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Start Letter",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ0ZWFtcyIsInN1YiI6InVzZXIiLCJleHAiOjE3MDg5NjQ5OTl9.g32_sdZkrgOLCitqoc6TEsVKw__zhciQ6EmHIn59fro",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/staffs/contains/letter?letter=J",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"staffs",
+								"contains",
+								"letter"
+							],
+							"query": [
+								{
+									"key": "letter",
+									"value": "J"
+								}
 							]
 						}
 					},

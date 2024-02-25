@@ -11,4 +11,7 @@ import java.util.List;
 public interface StaffRepository extends JpaRepository<Staff, Long> {
     List<Staff> findByName(String name);
 
+    List<Staff> deleteStaffByYearsLessThanEqual(Integer years);
+
+    List<Staff> findByNameStartingWith(String letter);
 }
