@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.UUID;
 
@@ -22,10 +23,12 @@ public class Team {
     private String country;
     private String stadium;
     private Boolean champions;
+    private LocalDateTime toChampionsTimestap;
     //Se establece la relacion de un equipo para muchos jugadores
     @OneToMany
     private List<Player> players;
     @OneToMany
     private List<Staff> staffs;
+
 }
 //El siguiente es el repositories

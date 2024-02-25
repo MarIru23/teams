@@ -1,5 +1,6 @@
 package es.laguna.teams.services;
 
+import es.laguna.teams.Models.Player;
 import es.laguna.teams.Models.Team;
 import es.laguna.teams.Repositories.PlayerRepository;
 import es.laguna.teams.Repositories.TeamRepository;
@@ -7,6 +8,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.UUID;
 
@@ -33,6 +35,15 @@ public class TeamServiceImpl implements TeamService{
     public List<Team> findByChampions(Boolean champions) {
         return teamRepository.findByChampions(champions);
     }
+
+    @Override
+    public Team setToChampions(Long id, Boolean champions, LocalDateTime toChampionsTimestap) {
+        Team update=this.findById(id);
+        update.setChampions(champions);
+        update.setToChampionsTimestap(LocalDateTime.now());
+        return teamRepository.save(update);
+    }
+
     @Override
     public Team findTeamByUuid(UUID uuid) {
         return teamRepository.findTeamByUuid(uuid).get();

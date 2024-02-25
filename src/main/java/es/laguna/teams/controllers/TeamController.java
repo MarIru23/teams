@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.UUID;
 
@@ -117,6 +118,18 @@ public class TeamController {
         Team teamPatched = teamService.patch(id, teamMapper.toModel(teamRequestDto));
         return ResponseEntity.ok(
                 teamMapper.toResponse(teamPatched)
+        );
+    }
+
+    //Localdatetime cuando actualizas el toChampions
+    @PatchMapping("/toChampions/{id}")
+    public ResponseEntity<TeamResponseDto> setToChampions(@PathVariable Long id,
+                                                          @RequestParam Boolean toChampions){
+        LocalDateTime toChampionsTimestamp = LocalDateTime.now();
+        log.info("setToChampions");
+        Team teamUpdated = teamService.setToChampions(id, toChampions, toChampionsTimestamp);
+        return ResponseEntity.ok(
+                teamMapper.toResponse(teamUpdated)
         );
     }
 }

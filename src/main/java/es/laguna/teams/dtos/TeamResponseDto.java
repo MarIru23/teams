@@ -5,6 +5,7 @@ import es.laguna.teams.Models.Staff;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.UUID;
 
@@ -18,6 +19,7 @@ public class TeamResponseDto {
     private final String country;
     private final String stadium;
     private final Boolean champions;
+    private final LocalDateTime toChampionsTimestap;
     private final List<Player> players;
     private final List<Staff> staffs;
 }

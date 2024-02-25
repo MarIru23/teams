@@ -2,6 +2,7 @@ package es.laguna.teams.services;
 
 import es.laguna.teams.Models.Team;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.UUID;
 
@@ -17,6 +18,8 @@ public interface TeamService {
     Team findTeamByUuid(UUID uuid);
 
     List<Team> findByChampions(Boolean champions);
+
+    Team setToChampions(Long id, Boolean champions, LocalDateTime toChampionsTimestap);
 
     //Es el de crear un equipo
     Team save(Team team);
