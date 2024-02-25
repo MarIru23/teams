@@ -50,7 +50,7 @@ public class StaffController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<StaffResponseDto> deleteTeam(
+    public ResponseEntity<StaffResponseDto> deleteStaff(
             @PathVariable Long id
     ){
         log.info("deleteStaff");
@@ -58,13 +58,25 @@ public class StaffController {
         return ResponseEntity.noContent().build();
     }
     @PostMapping
-    public ResponseEntity<StaffResponseDto> postteam(
+    public ResponseEntity<StaffResponseDto> postStaff(
             @RequestBody StaffRequestDto staffRequestDto
     ){
         log.info("insertStaff");
         Staff staffSaved = staffService.save(staffMapper.toModel(staffRequestDto));
         return ResponseEntity.created(null).body(
                 staffMapper.toResponse(staffSaved)
+        );
+    }
+    @PutMapping("/{id}")
+    public ResponseEntity<StaffResponseDto> putStaff(
+            @PathVariable Long id,
+            @RequestBody StaffRequestDto staffRequestDto
+    ){
+        log.info("putStaff");
+        Staff cambioStaff =staffService
+                .update(id, staffMapper.toModel(staffRequestDto));
+        return ResponseEntity.ok(
+                staffMapper.toResponse(cambioStaff)
         );
     }
 }
