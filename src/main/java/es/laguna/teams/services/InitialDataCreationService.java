@@ -36,6 +36,7 @@ public class InitialDataCreationService {
                     generateCountry(),
                     generateStadiumName(),
                     isChampion,
+                    LocalDateTime.now(),
                     null,
                     null
             );

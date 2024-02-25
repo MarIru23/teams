@@ -7,6 +7,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.UUID;
 
@@ -81,5 +82,13 @@ public class TeamServiceImpl implements TeamService{
             teamToPatch.setStadium(team.getStadium());
         }
         return teamRepository.save(teamToPatch);
+    }
+
+    @Override
+    public Team setChampions(Long id, Boolean champions, LocalDateTime tochampionsTimestamp) {
+        Team update=this.findById(id);
+        update.setChampions(champions);
+        update.setTochampionsTimestamp(LocalDateTime.now());
+        return teamRepository.save(update);
     }
 }

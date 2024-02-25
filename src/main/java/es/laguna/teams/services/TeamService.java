@@ -1,7 +1,9 @@
 package es.laguna.teams.services;
 
 import es.laguna.teams.Models.Team;
+import net.datafaker.providers.food.Tea;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.UUID;
 
@@ -27,4 +29,6 @@ public interface TeamService {
     Team update(Long Id, Team model);
 
     Team patch(Long id, Team team);
+
+    Team setChampions(Long id, Boolean champions, LocalDateTime tochampionsTimestamp);
 }

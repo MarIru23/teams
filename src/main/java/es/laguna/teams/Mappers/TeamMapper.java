@@ -5,6 +5,7 @@ import es.laguna.teams.dtos.TeamRequestDto;
 import es.laguna.teams.dtos.TeamResponseDto;
 import org.springframework.stereotype.Component;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.UUID;
 
@@ -19,6 +20,7 @@ public class TeamMapper {
                 team.getCountry(),
                 team.getStadium(),
                 team.getChampions(),
+                team.getTochampionsTimestamp(),
                 team.getPlayers(),
                 team.getStaffs()
         );
@@ -38,6 +40,7 @@ public class TeamMapper {
                 teamRequestDto.getCountry(),
                 teamRequestDto.getStadium(),
                 teamRequestDto.getChampions(),
+                LocalDateTime.now(), // TODO: esto está puesto asi pero no es así.
                 null,
                 null
         );
@@ -47,6 +50,7 @@ public class TeamMapper {
     public Team toModelfromRequestDto(Long team_Id) {
         return new Team(
                 team_Id,
+                null,
                 null,
                 null,
                 null,
