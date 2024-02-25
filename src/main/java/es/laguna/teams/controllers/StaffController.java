@@ -2,17 +2,15 @@ package es.laguna.teams.controllers;
 
 import es.laguna.teams.Mappers.PlayerMapper;
 import es.laguna.teams.Mappers.StaffMapper;
-import es.laguna.teams.dtos.PlayerResponseDto;
-import es.laguna.teams.dtos.StaffResponseDto;
+import es.laguna.teams.Models.Staff;
+import es.laguna.teams.Models.Team;
+import es.laguna.teams.dtos.*;
 import es.laguna.teams.services.PlayerService;
 import es.laguna.teams.services.StaffService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -51,4 +49,22 @@ public class StaffController {
         );
     }
 
+    @DeleteMapping("/{id}")
+    public ResponseEntity<StaffResponseDto> deleteTeam(
+            @PathVariable Long id
+    ){
+        log.info("deleteStaff");
+        staffService.deleteById(id);
+        return ResponseEntity.noContent().build();
+    }
+    @PostMapping
+    public ResponseEntity<StaffResponseDto> postteam(
+            @RequestBody StaffRequestDto staffRequestDto
+    ){
+        log.info("insertStaff");
+        Staff staffSaved = staffService.save(staffMapper.toModel(staffRequestDto));
+        return ResponseEntity.created(null).body(
+                staffMapper.toResponse(staffSaved)
+        );
+    }
 }
